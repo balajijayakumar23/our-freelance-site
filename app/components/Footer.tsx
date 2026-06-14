@@ -16,34 +16,38 @@ const team = [
 
 export default function Footer() {
   return (
-    <footer className="bg-black border-t border-white/10 py-12 px-4 sm:px-6 lg:px-8">
+    <footer
+      className="border-t py-12 px-4 sm:px-6 lg:px-8 transition-colors duration-200"
+      style={{ background: "var(--ts-bg-alt)", borderColor: "var(--ts-nav-border)" }}
+    >
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
-          {/* Brand */}
           <div>
             <a href="#" className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-white flex items-center justify-center">
-                <Zap className="w-4 h-4 text-black" />
+              <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: "var(--ts-icon-bg)" }}>
+                <Zap className="w-4 h-4" style={{ color: "var(--ts-icon-fg)" }} />
               </div>
-              <span className="text-white font-bold text-lg tracking-tight">
-                TriStack<span className="text-neutral-400"> Solutions</span>
+              <span className="font-bold text-lg tracking-tight transition-colors duration-200" style={{ color: "var(--ts-fg)" }}>
+                TriStack<span style={{ color: "var(--ts-fg-muted)" }}> Solutions</span>
               </span>
             </a>
-            <p className="text-neutral-500 text-sm leading-relaxed max-w-xs">
+            <p className="text-sm leading-relaxed max-w-xs transition-colors duration-200" style={{ color: "var(--ts-fg-subtle)" }}>
               Enterprise-Grade Tech, Freelance Flexibility. Salesforce, Cloud, and Golang
               specialists for hire.
             </p>
           </div>
 
-          {/* Navigation */}
           <div>
-            <p className="text-white font-semibold text-sm mb-4">Navigation</p>
+            <p className="font-semibold text-sm mb-4 transition-colors duration-200" style={{ color: "var(--ts-fg)" }}>
+              Navigation
+            </p>
             <ul className="flex flex-col gap-2.5">
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-neutral-500 hover:text-white text-sm transition-colors"
+                    className="text-sm transition-colors duration-200"
+                    style={{ color: "var(--ts-fg-subtle)" }}
                   >
                     {link.label}
                   </a>
@@ -52,9 +56,10 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Team LinkedIn */}
           <div>
-            <p className="text-white font-semibold text-sm mb-4">Connect With Us</p>
+            <p className="font-semibold text-sm mb-4 transition-colors duration-200" style={{ color: "var(--ts-fg)" }}>
+              Connect With Us
+            </p>
             <ul className="flex flex-col gap-3">
               {team.map((member) => (
                 <li key={member.name}>
@@ -62,10 +67,11 @@ export default function Footer() {
                     href={member.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-neutral-500 hover:text-white text-sm transition-colors group"
+                    className="flex items-center gap-2 text-sm transition-colors duration-200"
+                    style={{ color: "var(--ts-fg-subtle)" }}
                     aria-label={`${member.name} on LinkedIn`}
                   >
-                    <LinkedInIcon className="w-4 h-4 text-neutral-400 group-hover:text-white" />
+                    <LinkedInIcon className="w-4 h-4" style={{ color: "var(--ts-fg-muted)" }} />
                     {member.name}
                   </a>
                 </li>
@@ -74,11 +80,14 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-neutral-600 text-xs">
+        <div
+          className="border-t pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 transition-colors duration-200"
+          style={{ borderColor: "var(--ts-nav-border)" }}
+        >
+          <p className="text-xs transition-colors duration-200" style={{ color: "var(--ts-fg-faint)" }}>
             © {new Date().getFullYear()} TriStack Solutions. All rights reserved.
           </p>
-          <p className="text-neutral-600 text-xs">
+          <p className="text-xs transition-colors duration-200" style={{ color: "var(--ts-fg-faint)" }}>
             Built with Next.js & Tailwind CSS
           </p>
         </div>
